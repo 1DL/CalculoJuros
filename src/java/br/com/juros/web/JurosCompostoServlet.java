@@ -102,7 +102,7 @@ public class JurosCompostoServlet extends HttpServlet {
                 //Método Math.Pow > realiza potenciação - Uso: Math.pow(número,expoente)
                 //Nesse caso coloquei o número como (1 + taxaJuros), e o expoente como o valor de i do contador, que representa os meses
                 montante = BigDecimal.valueOf(montante).setScale(2, RoundingMode.HALF_UP).doubleValue();
-                out.println("<tr><td>" + i + "</td><td>" + montante + "</td></tr>"); //Na saida, concatena o valor de i e o montante calculado
+                out.println("<tr><td>" + i + "º</td><td>" + montante + "</td></tr>"); //Na saida, concatena o valor de i e o montante calculado
             }
 
             out.println("</table>");
