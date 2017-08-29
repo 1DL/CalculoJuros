@@ -70,6 +70,7 @@ public class JurosCompostoServlet extends HttpServlet {
 
                 if (request.getParameter("i") != null) {
                     taxaJuros = Float.parseFloat(request.getParameter("i")); //Taxa de Juros
+                    taxaJuros = taxaJuros / 100;
                     taxaJuros = BigDecimal.valueOf(taxaJuros).setScale(6, RoundingMode.HALF_UP).doubleValue();
                 }
                 if (request.getParameter("n") != null) {
