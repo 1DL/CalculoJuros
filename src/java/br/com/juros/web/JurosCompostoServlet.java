@@ -61,7 +61,7 @@ public class JurosCompostoServlet extends HttpServlet {
                 Também usei o BigDecimal que corrigiu o problema de precisão, e de números muito longos.*/
 
                 if (request.getParameter("c") != null) {
-                    capital = Float.parseFloat(request.getParameter("c"));
+                    capital = Double.parseDouble(request.getParameter("c"));
                     capital = BigDecimal.valueOf(capital).setScale(2, RoundingMode.HALF_UP).doubleValue();
                     //Explicação do método
                     //variavel = BigDecimal.valueOf(variavel).setScale(quantidade de casas decimais, modo de arredondamento).definirTipo();
@@ -69,9 +69,9 @@ public class JurosCompostoServlet extends HttpServlet {
                 }
 
                 if (request.getParameter("i") != null) {
-                    taxaJuros = Float.parseFloat(request.getParameter("i")); //Taxa de Juros
+                    taxaJuros = Double.parseDouble(request.getParameter("i")); //Taxa de Juros
                     taxaJuros = taxaJuros / 100;
-                    taxaJuros = BigDecimal.valueOf(taxaJuros).setScale(6, RoundingMode.HALF_UP).doubleValue();
+                    //taxaJuros = BigDecimal.valueOf(taxaJuros).setScale(6, RoundingMode.HALF_UP).doubleValue();
                 }
                 if (request.getParameter("n") != null) {
                     meses = Integer.parseInt(request.getParameter("n"));
